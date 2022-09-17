@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/2021-01-01-references.html",
+    "href": "posts/2021-01-01-references.html",
+    "title": "References",
+    "section": "",
+    "text": "Accelerator Physics — Lee\nIntroduction to the Physics of High Energy Accelerators — Edwards/Syphers\nMeasurement and Control of Charged Particle Beams — Minty/Zimmerman\nParticle Accelerator Physics — Wiedemann\nRF Linear Acceleratos — Wangler\nSpace Charge Physics for Particle Accelerators — Hofmann\nTheory and Design of Charged Particle Beams — Reiser"
+  },
+  {
+    "objectID": "posts/2021-01-01-references.html#computer-science",
+    "href": "posts/2021-01-01-references.html#computer-science",
+    "title": "References",
+    "section": "Computer science",
+    "text": "Computer science\n\nAlgorithms — Sedgewick/Wayne\nElements of Programming Interviews in Python — Aziz/Lee/Prakash"
+  },
+  {
+    "objectID": "posts/2021-01-01-references.html#machine-learning",
+    "href": "posts/2021-01-01-references.html#machine-learning",
+    "title": "References",
+    "section": "Machine learning",
+    "text": "Machine learning\n\nNeural Networks and Deep Learning — Nielsen\nPattern Recognition and Machine Learning — Bishop"
+  },
+  {
+    "objectID": "posts/2021-01-01-references.html#mathematics",
+    "href": "posts/2021-01-01-references.html#mathematics",
+    "title": "References",
+    "section": "Mathematics",
+    "text": "Mathematics\n\nMathematics of Classical and Quantum Physics — Byron/Fuller\nMathematical Methods for Physicists — Arfken/Weber"
+  },
+  {
+    "objectID": "posts/2021-01-01-references.html#physics",
+    "href": "posts/2021-01-01-references.html#physics",
+    "title": "References",
+    "section": "Physics",
+    "text": "Physics\n\nClassical Mechanics — Taylor\nClassical Mechanics — Goldstein\nIntroduction to Electrodynamics — Griffiths\nClassical Electromagnetism — Franklin\nIntroduction to Thermal Physics — Schroeder\nQuantum Mechanics: Concepts and Applications — Zettili\nStatistical Physics of Particles — Kardar"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "blog2",
+    "section": "",
+    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 14, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\nSome academic books that I’ve found to be useful.\n\n\n\n\n\n\nJan 1, 2021\n\n\nAustin Hoover\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]
