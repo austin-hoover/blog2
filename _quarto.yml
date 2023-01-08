@@ -1,19 +1,21 @@
 project:
   type: website
-
 website:
-  title: "blog2"
-  navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+    title: "Austin Hoover"
+    open-graph: False
+    navbar:
+        border: False
+        right:
+            - text: "Research"
+              href: research.qmd
+            - text: "Publications"
+              href: publications.qmd
+            - text: "Presentations"
+              href: presentations.qmd
+            - text: "Blog"
+              href: blog.qmd
 format:
-  html:
-    theme: cosmo
-    css: styles.css
-
-
-
+    html:
+        theme: 
+            light: [cosmo, custom_light.scss]
+            dark: [cosmo, custom_dark.scss]

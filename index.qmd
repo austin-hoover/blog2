@@ -1,14 +1,19 @@
 ---
-title: "blog2"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "Austin Hoover"
+about:
+    template: trestles
+    image: images/me_ORNL.jpg
+    links:
+        - icon: linkedin
+          href: https://linkedin.com/in/austin-hoover-7b760511b    
+        - icon: github
+          href: https://github.com/austin-hoover  
 ---
 
 
+I am a postdoc in the Accelerator Physics Group at the [Spallation Neutron Source](https://neutrons.ornl.gov/sns) (SNS). I completed a Ph.D. in physics at the University of Tennessee (2022) and a B.S. in physics at Wheaton College (2018).
+
+My research is in the field of accelerator physics, where the goal is to understand, predict, measure, and control the behavior of charged particle beams. In particular, I focus on increasing the intensity of hadron beams in linear and circular accelerators. Intense hadron beams have a variety of applications, ranging from nuclear/particle physics and nuclear energy production. [...]
+
+
+[Guide to this site...]

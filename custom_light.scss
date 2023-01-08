@@ -1,0 +1,19 @@
+/*-- scss:functions --*/
+
+
+/*-- scss:defaults --*/
+
+$code-font-size: 90% !important;
+$body-color: black;
+$figure-caption-font-size: 95% !important;
+$figure-caption-color: rgb(128, 128, 128) !important;
+
+
+/*-- scss:rules --*/
+
+.navbar {
+    // border-bottom: 3px solid black;
+    padding-bottom: 0;
+    padding-top: 0;
+    background-color: rgb(50, 50, 50);
+}
