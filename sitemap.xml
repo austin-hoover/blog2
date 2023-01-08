@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://austin-hoover.github.io/blog2/posts/post-with-code/index.html</loc>
-    <lastmod>2022-09-17T19:55:14.018Z</lastmod>
+    <loc>https://austin-hoover.github.io/blog2/research.html</loc>
+    <lastmod>2023-01-08T21:56:16.543Z</lastmod>
   </url>
   <url>
-    <loc>https://austin-hoover.github.io/blog2/posts/welcome/index.html</loc>
-    <lastmod>2022-09-17T19:55:14.369Z</lastmod>
+    <loc>https://austin-hoover.github.io/blog2/posts/2021-01-21-parametric_oscillators/2021-01-21-parametric_oscillators.html</loc>
+    <lastmod>2023-01-08T21:56:17.419Z</lastmod>
   </url>
   <url>
-    <loc>https://austin-hoover.github.io/blog2/posts/2021-01-01-references.html</loc>
-    <lastmod>2022-09-17T19:55:14.745Z</lastmod>
+    <loc>https://austin-hoover.github.io/blog2/posts/2021-01-01-reading_list/2021-01-01-references.html</loc>
+    <lastmod>2023-01-08T21:56:17.868Z</lastmod>
   </url>
   <url>
     <loc>https://austin-hoover.github.io/blog2/index.html</loc>
-    <lastmod>2022-09-17T19:55:15.156Z</lastmod>
+    <lastmod>2023-01-08T21:56:18.206Z</lastmod>
   </url>
   <url>
-    <loc>https://austin-hoover.github.io/blog2/about.html</loc>
-    <lastmod>2022-09-17T19:55:15.473Z</lastmod>
+    <loc>https://austin-hoover.github.io/blog2/publications.html</loc>
+    <lastmod>2023-01-08T21:56:18.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://austin-hoover.github.io/blog2/presentations.html</loc>
+    <lastmod>2023-01-08T21:56:18.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://austin-hoover.github.io/blog2/blog.html</loc>
+    <lastmod>2023-01-08T21:56:19.195Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Austin Hoover">
+<meta name="dcterms.date" content="2021-01-25">
+<meta name="description" content="Describing particle motion in the presence of time-dependent coupled linear forces.">
+
+<title>Austin Hoover - Coupled parametric oscillators</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Austin Hoover</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html">Research</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../presentations.html">Presentations</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#equations-of-motion" id="toc-equations-of-motion" class="nav-link active" data-scroll-target="#equations-of-motion">Equations of motion</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a>
+  <ul class="collapse">
+  <li><a href="#transfer-matrix-eigenvectors" id="toc-transfer-matrix-eigenvectors" class="nav-link" data-scroll-target="#transfer-matrix-eigenvectors">Transfer matrix eigenvectors</a></li>
+  <li><a href="#eigenvector-parameterization" id="toc-eigenvector-parameterization" class="nav-link" data-scroll-target="#eigenvector-parameterization">Eigenvector parameterization</a></li>
+  <li><a href="#floquet-transformation" id="toc-floquet-transformation" class="nav-link" data-scroll-target="#floquet-transformation">Floquet transformation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Coupled parametric oscillators</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">physics</div>
+    <div class="quarto-category">accelerators</div>
+    <div class="quarto-category">classical mechanics</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Describing particle motion in the presence of time-dependent coupled linear forces.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Austin Hoover </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 25, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="equations-of-motion" class="level2">
+<h2 class="anchored" data-anchor-id="equations-of-motion">Equations of motion</h2>
+<p>A <a href="https://austin-hoover.github.io/blog/physics/accelerators/differential%20equations/2021/01/21/parametric_oscillators.html">previous post</a> examined the analytic solutions to the equation of motion describing a parametric oscillator — an oscillator whose physical properties are time-dependent. This problem was motivated by describing the transverse oscillations of a charged particle in an accelerator. In this post, the treatment will be extended to a <em>coupled</em> parametric oscillator. Basically, we are trying to solve the following equation of motion:</p>
+<p><span class="math display">\[x'' + k_{11}(s)x + k_{13}(s)y + k_{14}(s)y' = 0,\]</span> <span class="math display">\[y'' + k_{33}(s)y + k_{31}(s)x + k_{32}(s)x' = 0,\]</span></p>
+<p>where the prime denotes differentiation with respect to <span class="math inline">\(s\)</span>. We will also assume that <span class="math inline">\(k_{ij}(s + L) = k_{ij}(s)\)</span> for some <span class="math inline">\(L\)</span>.</p>
+<p>The first possible source of coupling is the longitudinal magnetic field produced within a solenoid magnet.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="solenoid.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<p></p><figcaption class="figure-caption">Fig. 1. Solenoid magnetic field. Source: brilliant.org</figcaption><p></p>
+</figure>
+</div>
+<p>If we assume that the solenoid is very long, the field withing the coils points in the longitudinal direction and is approximately constant (<span class="math inline">\(\mathbf{B}_{sol} = B_0\hat{s}\)</span>). Plugging this into the Lorentz force equation, we find:</p>
+<p><span class="math display">\[\dot{\mathbf{v}} = \frac{q}{m} \mathbf{v} \times \mathbf{B} = \frac{qB_0}{m}\left({v_y\hat{x} - v_x\hat{y}}\right).\]</span></p>
+<p>The motion in <span class="math inline">\(x\)</span> depends on the velocity in <span class="math inline">\(y\)</span>, and vice versa. Coupling can also be produced by transverse magnetic fields. Recall the multipole expansion of a transverse magnetic field <span class="math inline">\(\mathbf{B} = (B_x, B_y)\)</span>:</p>
+<p><img src="images_2021-01-21/multipoles.png" width="525"></p>
+<p>There will be nonlinear coupling (terms proportional to <span class="math inline">\(x^j y^k\)</span>, where <span class="math inline">\(j,k &gt; 1\)</span>) when <span class="math inline">\(n &gt; 2\)</span>, but we are interested only in linear coupling. This occurs when the skew quadrupole term <span class="math inline">\(a_2\)</span> is nonzero, which is true when a quadrupole is tilted in the transverse plane. The field couples the motion in one plane to the displacement in the other.</p>
+</section>
+<section id="solution" class="level2">
+<h2 class="anchored" data-anchor-id="solution">Solution</h2>
+<p>Let’s review the approach we took in analyzing the 1D parametric oscillator. We wrote the solution in pseudo-harmonic form with an amplitude <span class="math inline">\(\sqrt{2 J \beta(s)}\)</span> and phase <span class="math inline">\(\mu(s)\)</span>. We then focused on the motion of a particle in <span class="math inline">\(x\)</span>-<span class="math inline">\(x'\)</span> phase space after each focusing period. We observed that the particle jumps around an ellipse: the area of the ellipse is constant and proportional to <span class="math inline">\(2 J\)</span>; the dimensions of the ellipse are determined by <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\alpha = -\beta' / 2\)</span>; the size of the jumps around the ellipse are determined by <span class="math inline">\(\mu\)</span>. We then wrote the symplectic <span class="math inline">\(2 \times 2\)</span> transfer matrix <span class="math inline">\(\mathbf{M}\)</span>, which connects the initial and final phase space coordinates through one period, as</p>
+<p><span class="math display">\[\mathbf{M} = \mathbf{V}\mathbf{P}\mathbf{V}^{-1}.\]</span></p>
+<p><span class="math inline">\(\mathbf{V}^{-1}\)</span>, which is a function of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, is a symplectic transformation that deforms the ellipse into a circle while preserving its area, and <span class="math inline">\(\mathbf{P}\)</span> is a rotation in phase space by the phase advance <span class="math inline">\(\mu\)</span>.</p>
+<p>This is a very elegant way to describe the motion with a minimal set of parameters. The question is: can we do something similar for coupled motion, in which the phase space is 4D, not 2D? To start, let’s track a particle in a lattice with a nonzero skew quadrupole coefficient and plot its phase space coordinates after each period.</p>
+<p><img src="images_2021-01-25/tbt.mov" width="450"></p>
+<p>The particle traces donut-like shapes in <span class="math inline">\(x\)</span>-<span class="math inline">\(x'\)</span> and <span class="math inline">\(y\)</span>-<span class="math inline">\(y'\)</span> instead of ellipses. Here are the shapes after 1000 periods.</p>
+<p>There is clearly more than one frequency present in the oscillations.</p>
+<p>This is typical of a coupled oscillator. The motion in such systems is typically understood as the superposition of <a href="https://en.wikipedia.org/wiki/Normal_mode">normal modes</a>, each of which corresponds to a single frequency. For example, consider two masses connected with a spring. There are two possible ways for the masses to oscillate at the same frequency. The first is a <em>breathing mode</em> in which they move in opposite directions, and the second is a <em>sloshing mode</em> in which they move in the same direction. The motion is the sum of these two modes. We will try to do something similar for a coupled parameteric oscillator.</p>
+<section id="transfer-matrix-eigenvectors" class="level3">
+<h3 class="anchored" data-anchor-id="transfer-matrix-eigenvectors">Transfer matrix eigenvectors</h3>
+<p>If the phase space coordinate vector <span class="math inline">\(\mathbf{x} = (x, x', y, y')^T\)</span> evolves according to</p>
+<p><span class="math display">\[\mathbf{x} \rightarrow \mathbf{Mx},\]</span></p>
+<p>where <span class="math inline">\(\rightarrow\)</span> represents tracking through one period, it can be shown that <span class="math inline">\(\mathbf{M}\)</span> is <a href="https://en.wikipedia.org/wiki/Symplectic_matrix#Properties">symplectic</a> due to the Hamiltonian mechanics of the system. Consider the eigenvectors of <span class="math inline">\(\mathbf{M}\)</span>:</p>
+<p><span class="math display">\[\mathbf{Mv} = e^{-i\mu}\mathbf{v}.\]</span></p>
+<p>The symplecticity condition causes the eigenvalues and eigenvectors come in two complex conjugate pairs; this gives <span class="math inline">\(\mathbf{v}_1\)</span>, <span class="math inline">\(\mathbf{v}_2\)</span>, <span class="math inline">\(\mu_1\)</span>, <span class="math inline">\(\mu_2\)</span> and their complex conjugates. The seemingly complex motion is simplified when written in terms of the eigenvectors. We can write any coordinate vector as a linear combination of the real and imaginary components of <span class="math inline">\(\mathbf{v}_1\)</span> and <span class="math inline">\(\mathbf{v}_2\)</span>:</p>
+<p><span class="math display">\[\mathbf{x} = Re \left(\sqrt{2 J_1}\mathbf{v}_1e^{-i\psi_1} + \sqrt{2 J_2}\mathbf{v}_2e^{-i\psi_2}\right).\]</span></p>
+<p>We have introduced two invariant amplitudes (<span class="math inline">\(J_1\)</span> and <span class="math inline">\(J_2\)</span>) as well as two initial phases (<span class="math inline">\(\psi_1\)</span> and <span class="math inline">\(\psi_2\)</span>). Applying the transfer matrix tacks on a phase to each eigenvector. Thus, what we are observing are the 2D projections of the real components of these eigenvectors as they rotate in the complex plane.</p>
+<p><span class="math display">\[\mathbf{Mx} = Re \left(\sqrt{2 J_1}\mathbf{v}_1e^{-i\left(\psi_1 + \mu_1\right)} + \sqrt{2 J_2}\mathbf{v}_2e^{-i(\psi_2 + \mu_2)}\right).\]</span></p>
+<p>Let’s replay the animation, but this time draw a red arrow for <span class="math inline">\(\mathbf{v}_1\)</span> and a blue arrow for <span class="math inline">\(\mathbf{v}_2\)</span>. We’ve chosen <span class="math inline">\(J_1 = 4 J_2\)</span> and <span class="math inline">\(\psi_2 - \psi_1 = \pi/2\)</span>.</p>
+<p><img src="images_2021-01-25/tbt_vec.mov" width="450"></p>
+<p>Much simpler. Each eigenvector simply rotates at its frequency <span class="math inline">\(\mu_l\)</span>. It also explains why the amplitude in the <span class="math inline">\(x\)</span>-<span class="math inline">\(x'\)</span> and <span class="math inline">\(y\)</span>-<span class="math inline">\(y'\)</span> planes trade back and forth: it is because the projections of the eigenvectors rotate at different frequencies, sometimes aligning and sometimes anti-aligning. Because of this, the previous invariants <span class="math inline">\(J_{x,y}\)</span> are replaced by <span class="math inline">\(J_{1,2}\)</span>. It is helpful to think of a torus (shown below). The two amplitudes would determine the inner and outer radii of the torus, and the two phases determine the location of a particle on the surface.</p>
+<img src="images_2021-01-25/torus.png" width="290">
+<figcaption>
+Source: Wikipedia
+</figcaption>
+</section>
+<section id="eigenvector-parameterization" class="level3">
+<h3 class="anchored" data-anchor-id="eigenvector-parameterization">Eigenvector parameterization</h3>
+<p>We are now going to introduce a set of parameters for these eigenvectors, and in turn the transfer matrix. We already have two phases, so that leaves 8 parameters. Our strategy is to observe that each eigenvector traces an ellipse in both horizontal (<span class="math inline">\(x\)</span>-<span class="math inline">\(x'\)</span>) and vertical (<span class="math inline">\(y\)</span>-<span class="math inline">\(y'\)</span>) phase space. Then, we will simply assign an <span class="math inline">\(\alpha\)</span> function and <span class="math inline">\(\beta\)</span> function to each of these ellipses. So, for the ellipse traced by <span class="math inline">\(\mathbf{v}_1\)</span> in the <span class="math inline">\(x\)</span>-<span class="math inline">\(x'\)</span> plane, we have <span class="math inline">\(\beta_{1x}\)</span> and <span class="math inline">\(\alpha_{1x}\)</span>, and then for the second eigenvector we have <span class="math inline">\(\beta_{2x}\)</span> and <span class="math inline">\(\alpha_{2x}\)</span>. The same thing goes for the vertical dimension with <span class="math inline">\(x\)</span> replaced by <span class="math inline">\(y\)</span>.</p>
+<p><img src="images_2021-01-25/4dtwiss.png"> <br></p>
+<p>The actual eigenvectors written in terms of the parameters are</p>
+<p><span class="math display">\[\vec{v}_1 = \begin{bmatrix}\sqrt{\beta_{1x}} \\\\-\frac{\alpha_{1x} + i(1-u)}{\sqrt{\beta_{1x}}} \\\\ \sqrt{\beta_{1y}}e^{i\nu_1} \\\\ -\frac{\alpha_{1y} + iu}{\sqrt{\beta_{1y}}} e^{i\nu_1} \end{bmatrix}, \quad \vec{v}_2 = \begin{bmatrix} \sqrt{\beta_{2x}}e^{i\nu_2} \\\\ -\frac{\alpha_{2x} + iu}{\sqrt{\beta_{2x}}}e^{i\nu_2} \\\\ \sqrt{\beta_{2y}} \\\\ -\frac{\alpha_{2y} + i(1-u)}{\sqrt{\beta_{2y}}} \end{bmatrix}\]</span></p>
+<p>So in addition to the phases <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> we have <span class="math inline">\(\alpha_{1x}\)</span>, <span class="math inline">\(\alpha_{2x}\)</span>, <span class="math inline">\(\alpha_{1y}\)</span>, <span class="math inline">\(\alpha_{2y}\)</span>, <span class="math inline">\(\beta_{1x}\)</span>, <span class="math inline">\(\beta_{2x}\)</span>, <span class="math inline">\(\beta_{1y}\)</span>, and <span class="math inline">\(\beta_{2y}\)</span>. That’s pretty much it. There are a few other parameters we need to introduce to simplify the notation, but they are not independent. The first is <span class="math inline">\(u\)</span>, which, as noted in the figure, determines the areas of the ellipses in one plane relative to the other. The second and third are <span class="math inline">\(\nu_1\)</span> and <span class="math inline">\(\nu_2\)</span>, which are phase differences between the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components of the eigenvectors (in the animation they are either <span class="math inline">\(0\)</span> or <span class="math inline">\(\pi\)</span>). I won’t discuss these here. The last thing to note is that the parameters reduce to their 1D definitions when there is no coupling in the lattice. So we would have <span class="math inline">\(\beta_{1x}, \beta_{2y} \rightarrow \beta_{x}, \beta_{y}\)</span> and <span class="math inline">\(\beta_{2x}, \beta_{1y} \rightarrow 0\)</span>, and similar for <span class="math inline">\(\alpha\)</span>. The invariants and phase advances would also revert back to their original values: <span class="math inline">\(J_{1,2} \rightarrow J{x,y}\)</span> and <span class="math inline">\(\mu_{1,2} \rightarrow \mu_{x,y}\)</span>.</p>
+</section>
+<section id="floquet-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="floquet-transformation">Floquet transformation</h3>
+<p>These eigenvectors can also be used to construct a transformation which removes both the variance in the focusing strength and the coupling between the planes, turning the coupled parametric oscillator into an uncoupled harmonic oscillator. In other words, we seek a matrix <span class="math inline">\(\mathbf{V}\)</span> such that</p>
+<p><span class="math display">\[\mathbf{V^{-1} M V} = \mathbf{P} =
+\begin{bmatrix}
+    \cos{\mu_1} &amp; \sin{\mu_1}  &amp; 0 &amp; 0 \\
+    -\sin{\mu_1} &amp; \cos{\mu_1}  &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; \cos{\mu_2} &amp; \sin{\mu_2} \\
+    0 &amp; 0 &amp; -\sin{\mu_2} &amp; \cos{\mu_2}
+\end{bmatrix}
+\]</span></p>
+<p>We can do this simply by rewriting the following equation (I haven’t yet figured out how to number equations in Jupyter):</p>
+<p><span class="math display">\[\mathbf{x} = Re \left(\sqrt{2J_1}\mathbf{v}_1e^{-i\psi_1} + \sqrt{2J_2}\mathbf{v}_2e^{-i\psi_2}\right)\]</span></p>
+<p>in matrix form as <span class="math inline">\(\mathbf{x} = \mathbf{V}\mathbf{x}_n\)</span> with</p>
+<p><span class="math display">\[\mathbf{x}_n = \begin{bmatrix}
+  \sqrt{2J_1}\cos{\psi_1} \\
+  -\sqrt{2J_1}\sin{\psi_1} \\  
+  \sqrt{2J_2}\cos{\psi_2} \\
+  -\sqrt{2J_2}\sin{\psi_2}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[\mathbf{V} = \left[{Re(\mathbf{v}_1), -Im(\mathbf{v}_1), Re(\mathbf{v}_2), -Im(\mathbf{v}_2)}\right]\]</span></p>
+<p>Let’s observe the motion in these new coordinates <span class="math inline">\(\mathbf{x}_n\)</span>.</p>
+<p><img src="images_2021-01-25/tbt_vec_norm.mov" width="450"></p>
+<p>The motion is uncoupled after this transformation; i.e., particles move in a circle of area <span class="math inline">\(2J_1\)</span> in the <span class="math inline">\(x_n\)</span>-<span class="math inline">\(x_n'\)</span> plane at frequency <span class="math inline">\(\mu_1\)</span>, and in a circle of area <span class="math inline">\(2J_2\)</span> in the <span class="math inline">\(y_n\)</span>-<span class="math inline">\(y_n'\)</span> plane at frequency <span class="math inline">\(\mu_2\)</span>.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The method introduced here allows us to describe the evolution of a parametric oscillator using the minimum number of parameters. Our physical motivation was an accelerator lattice with linear, coupled forces. There is no agreed upon method to do this among accelerator physicists, but I like (and know) this method the best, and have used it in my research. I’ve left out details which can be found in the paper by <a href="https://arxiv.org/abs/1207.5526">Lebedev and Bogacz</a>. The paper by <a href="https://aip.scitation.org/doi/abs/10.1063/1.38050">Ripken</a> is also very helpful.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="austin-hoover/blog2" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

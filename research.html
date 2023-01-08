@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Austin Hoover</title>
+<title>Austin Hoover - Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -60,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -80,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html">Research</a>
+    <a class="nav-link active" href="./research.html" aria-current="page">Research</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./publications.html">Publications</a>
@@ -106,37 +108,50 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/me_ORNL.jpg" class="about-image
-  rounded " style="width: 20em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Austin Hoover</h1>
+<h1 class="title">Research</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+    
   </div>
+  
+
 </header>
-    <div class="about-links">
-  <a href="https://linkedin.com/in/austin-hoover-7b760511b" class="about-link">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/austin-hoover" class="about-link">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>I am a postdoc in the Accelerator Physics Group at the <a href="https://neutrons.ornl.gov/sns">Spallation Neutron Source</a> (SNS). I completed a Ph.D.&nbsp;in physics at the University of Tennessee (2022) and a B.S. in physics at Wheaton College (2018).</p>
-<p>My research is in the field of accelerator physics, where the goal is to understand, predict, measure, and control the behavior of charged particle beams. In particular, I focus on increasing the intensity of hadron beams in linear and circular accelerators. Intense hadron beams have a variety of applications, ranging from nuclear/particle physics and nuclear energy production. […]</p>
-<p>[Guide to this site…]</p>
+
+<p>The following is a short description of my current research. [Work in progress.]</p>
+<section id="collective-effects-in-particle-accelerators" class="level2">
+<h2 class="anchored" data-anchor-id="collective-effects-in-particle-accelerators">1. Collective effects in particle accelerators</h2>
+<p>An accelerator is a machine that produces beams of charged particles and directs them to a target. The products of the resulting collision can unveil the internal structure of the target. A large range of spatial and temporal scales can be probed by tuning the beam parameters — the energy, charge density, time structure, particle species, etc. Thus, accelerators are important experimental tools in many fields, including elementary particle physics, nuclear physics, condensed matter physics, material science, chemistry, and biology.</p>
+<p><strong>Accelerator physics</strong> aims to understand, predict, measure, and control the behavior of charged particle beams. We can divide this effort into three main categories: (1) increasing the beam energy, (2) increasing the beam intensity (the total number of particles), and (3) increasing the beam brightness (the particle density in position-momentum space). My research is currently focused on increasing hadron beam intensity. Intense hadron beams have applications ranging from particle physics to nuclear energy production.</p>
+<p>The beam intensity in an accelerator is limited by the number of particles that do not survive their journey to the target. We call these <em>lost particles</em>. Losses lead to damage and radio-activation of the accelerator components. If the radiation is too high, hands-on maintenance is unsafe and the accelerator cannot operate. It is at first not obvious why any beam loss should occur. Accelerators are carefully designed so that each particle performs stable oscillations about a reference trajectory. But these designs are based on single-particle tracking through linear electromagnetic fields; in reality, nonlinear fields exist and the beam is comprised of billions or trillions of interacting particles. These <em>collective effects</em> are particularly difficult to predict.</p>
+<p>There are two main collective effects to consider. First, relativistic charged particles generate electromagnetic <em>wake fields</em>. When these wake fields interact with the environment (i.e., the conducting vacuum chamber), they can affect other particles in the beam (or the same particle on subsequent turns in a circular machine). This feedback loop can cause unstable dipole oscillations of the entire beam. Second, particles interact directly via Coloumb forces, also known as <em>space charge forces</em>. When coupled with the periodic electromagnetic fields in the accelerator (linear or nonlinear), space charge forces can lead to chaotic phase space trajectories and large-amplitude excursions of single particles. The resulting beam loss can be problematic even if very small relative to the total beam intensity.</p>
+</section>
+<section id="predicting-halo-formation-in-linacs" class="level2">
+<h2 class="anchored" data-anchor-id="predicting-halo-formation-in-linacs">2. Predicting halo formation in linacs</h2>
+<p>The magnitude of the space charge force depends inversely on the beam energy. Thus, space charge is strongest during the early stages of acceleration in a linear accelerator (linac), near the particle source. The dynamics are complicated in this stage. One well-known and persistent phenomenon is the emergence of <em>beam halo</em> — a low-density region of position-momentum space (phase space) far from the dense beam core. Halo particles are very likely to be lost during transport due to their large amplitudes. Even a very low-density halo can cause unacceptable beam loss. The beam power deposited throughout the accelerator must be kept below one watt per meter along the beamline. Existing facilities operating with megawatts of beam power and losses on the order of <span class="math inline">\(10^{-4}\)</span>-<span class="math inline">\(10^{-6}\)</span> operate near this limit. If the beam power was increased by a factor of ten while fixing the fractional beam loss, the radio-activation in the linac would be too high.</p>
+<p>Since halo particles occupy very low-density regions of phase space, their evolution is difficult to predict. Beam loss patterns in large linear accelerators cannot be reproduced in simulations, and even attempts to predict halo formation over short distances have failed. Although the relevant physics is assumed to be modeled correctly in simulation codes, there remain uncertainties in the simulation inputs — the electromagnetic fields throughout the accelerator and the initial particle distribution.</p>
+<p>[…]</p>
+</section>
+<section id="phase-space-reconstruction" class="level2">
+<h2 class="anchored" data-anchor-id="phase-space-reconstruction">3. Phase space reconstruction</h2>
+<p>[…]</p>
+</section>
+<section id="beam-shaping-in-hadron-rings" class="level2">
+<h2 class="anchored" data-anchor-id="beam-shaping-in-hadron-rings">4. Beam shaping in hadron rings</h2>
+<p>[…]</p>
 
 
-</main></div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -270,6 +285,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
   } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
