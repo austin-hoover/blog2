@@ -17,5 +17,11 @@ website:
 format:
     html:
         theme: 
-            light: [cosmo, custom_light.scss]
-            dark: [cosmo, custom_dark.scss]
+            light: custom_light.scss
+            dark: custom_dark.scss
+        anchor-sections: true
+        cap-location: margin
+        toc-location: right
+        title-block-categories: false
+        shift-heading-level-by: 0
+        

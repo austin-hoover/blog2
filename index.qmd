@@ -11,9 +11,8 @@ about:
 ---
 
 
-I am a postdoc in the Accelerator Physics Group at the [Spallation Neutron Source](https://neutrons.ornl.gov/sns) (SNS). I completed a Ph.D. in physics at the University of Tennessee (2022) and a B.S. in physics at Wheaton College (2018).
+I am a postdoc in the Accelerator Physics Group at the [Spallation Neutron Source](https://neutrons.ornl.gov/sns) (SNS). Previously, I completed a Ph.D. in physics at the University of Tennessee, Knoxville (2022) and a B.S. in physics at Wheaton College (2018).
 
-My research is in the field of accelerator physics, where the goal is to understand, predict, measure, and control the behavior of charged particle beams. In particular, I focus on increasing the intensity of hadron beams in linear and circular accelerators. Intense hadron beams have a variety of applications, ranging from nuclear/particle physics and nuclear energy production. [...]
+My research is in the field of accelerator physics, where the goal is to understand, predict, measure, and control the behavior of charged particle beams. In particular, I focus on increasing the intensity of hadron beams in linear and circular accelerators.
 
-
-[Guide to this site...]
+This site contains a short summary of my current research projects, a list of publications and presentations, and my blog, where I write mostly about physics and philosophy.

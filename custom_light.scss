@@ -3,17 +3,26 @@
 
 /*-- scss:defaults --*/
 
+$font-size-root: 105%;
 $code-font-size: 90% !important;
-$body-color: black;
-$figure-caption-font-size: 95% !important;
-$figure-caption-color: rgb(128, 128, 128) !important;
 
+$h2-font-size: 180%;
+$h2-font-size: 160%;
+$h3-font-size: 140%;
+$h4-font-size: 120%;
+$h5-font-size: 100%;
+
+$figure-caption-font-size: 90% !important;
+$figure-caption-color: rgb(128, 128, 128) !important;
+$navbar-bg: rgb(50, 50, 50);
 
 /*-- scss:rules --*/
 
 .navbar {
-    // border-bottom: 3px solid black;
-    padding-bottom: 0;
-    padding-top: 0;
-    background-color: rgb(50, 50, 50);
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+#quarto-document-content {
+    max-width: 770px !important;
 }

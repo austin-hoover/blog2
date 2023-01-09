@@ -2,7 +2,7 @@
 title: "Research"
 ---
 
-The following is a short description of my current research. [Work in progress.]
+The following is a short description of my current research projects. [Work in progress.]
 
 
 ## 1. Collective effects in particle accelerators
